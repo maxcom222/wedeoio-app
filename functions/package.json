@@ -1,0 +1,36 @@
+{
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "npm run build && firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "1.0.20",
+    "@google-cloud/storage": "5.8.1",
+    "@sendgrid/mail": "7.4.2",
+    "algoliasearch": "^4.8.6",
+    "child-process-promise": "^2.2.1",
+    "firebase-admin": "9.5.0",
+    "firebase-functions": "3.13.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "mkdirp": "^1.0.4",
+    "randomstring": "1.1.5",
+    "simple-oauth2": "3.4.0",
+    "stripe": "8.67.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  },
+  "private": true
+}

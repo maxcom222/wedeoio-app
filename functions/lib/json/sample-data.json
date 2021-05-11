@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "name": "John",
+      "email": "wedeoio.demo.john@gmail.com",
+      "isAdmin": false,
+      "teams": [],
+      "createdAt": 1618620910708
+    },
+    {
+      "name": "Betty",
+      "email": "wedeoio.demo.betty@gmail.com",
+      "isAdmin": false,
+      "teams": [],
+      "createdAt": 1618620910708
+    }
+  ],
+  "comments": {
+    "image": [
+      {
+        "text": "What do you think about the beach?",
+        "annotation": {
+          "ellipses": [],
+          "lines": [],
+          "rects": [
+            {
+              "color": "#EF4444",
+              "y": 1411.0902696365767,
+              "height": 715.7796014067997,
+              "width": 1593.622508792497,
+              "originX": 1940.2579132473622,
+              "originY": 1411.0902696365767,
+              "x": 1940.2579132473622
+            }
+          ],
+          "arrows": []
+        },
+        "start": null,
+        "end": null
+      }
+    ],
+    "video": [
+      {
+        "text": "What is he doing?",
+        "annotation": {
+          "lines": [],
+          "arrows": [],
+          "rects": [],
+          "ellipses": [
+            {
+              "color": "#22C55E",
+              "originX": 929.0322580645161,
+              "originY": 129.00293255131965,
+              "x": 1012.5513196480938,
+              "y": 225.65982404692082,
+              "radiusX": 83.5190615835777,
+              "radiusY": 96.65689149560117
+            }
+          ]
+        },
+        "start": 6145,
+        "end": null
+      },
+      {
+        "text": "I don't know)",
+        "annotation": {
+          "lines": [],
+          "arrows": [],
+          "rects": [],
+          "ellipses": []
+        },
+        "start": 6959,
+        "end": null
+      },
+      {
+        "text": "How do you like this car?",
+        "annotation": {
+          "lines": [],
+          "arrows": [],
+          "rects": [
+            {
+              "color": "#F59E0B",
+              "originX": 816.4222873900293,
+              "originY": 494.9853372434017,
+              "x": 816.4222873900293,
+              "y": 494.9853372434017,
+              "width": 463.5777126099707,
+              "height": 240.2346041055718
+            }
+          ],
+          "ellipses": []
+        },
+        "start": 26412,
+        "end": null
+      }
+    ]
+  }
+}

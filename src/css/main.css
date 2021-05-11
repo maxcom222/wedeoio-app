@@ -1,0 +1,86 @@
+* {
+  outline: none !important;
+}
+
+img:-moz-broken {
+  opacity: 0;
+}
+
+img:not([src]) {
+}
+
+video {
+  background-color: #000;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  transform: scale(0);
+  transition: transform 400ms cubic-bezier(0.02, 0.85, 0.01, 0.98);
+}
+
+.ReactModal__Content--after-open {
+  transform: scale(1);
+}
+
+.ReactModal__Content--before-close {
+  transform: scale(0);
+}
+
+.hover-trigger .hover-target {
+  visibility: hidden;
+}
+
+.hover-trigger:hover .hover-target {
+  visibility: visible;
+}
+
+/* custom scrollbar */
+.custom-scrollbar {
+  overflow: overlay;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  display: none;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  display: none;
+}
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  display: block;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.children\:overflow-unset > * {
+  overflow: unset !important;
+}
+
+@media (max-width: 991.98px) {
+  .ReactModal__Content {
+    height: 100%;
+    margin: 0 !important;
+    inset: 0 !important;
+    min-width: unset !important;
+    width: 100%;
+    border-radius: 0 !important;
+  }
+}

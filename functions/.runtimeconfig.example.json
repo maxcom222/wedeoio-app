@@ -1,0 +1,21 @@
+{
+  "client": {
+    "host": "http://localhost:3000"
+  },
+  "oauth": {
+    "client_id": "client_id",
+    "client_secret": "client_secret"
+  },
+  "postmark": {
+    "api_key": "api_key",
+    "welcome_template_id": "template_id",
+    "team_invite_template_id": "template_id"
+  },
+  "stripe": {
+    "hobby_product_id": "prod_xxx",
+    "pro_product_id": "prod_xxx",
+    "webhook_secret": "whsec_xxx",
+    "publishable_key": "pk_test_xxx",
+    "test_key": "sk_test_xxx"
+  }
+}

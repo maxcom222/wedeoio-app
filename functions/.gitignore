@@ -1,0 +1,17 @@
+## Compiled JavaScript files
+**/*.js
+**/*.js.map
+
+# Typescript v1 declaration files
+typings/
+
+node_modules/
+
+# Environment variables
+.runtimeconfig.json
+
+# Debug logs
+ui-debug.log
+firebase-debug.log
+firestore-debug.log
+pubsub-debug.log

@@ -1,0 +1,71 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Only allow read and write any data to db is user is logged in
+    match /{document=**} {
+      allow read, write: if isSignedIn()
+    }
+
+    // Basic rules applied to users documents
+    match /users/{uid} {
+      allow read: if true;
+      allow create, update: if true;
+      allow delete: if false;
+    }
+
+    // Basic rules applied to teams documents
+    match /teams/{uid} {
+      // Does the logged-in user match the requested ownerID of the team document
+      function isTeamOwner() {
+        return request.auth.uid == incomingData().ownerId;
+      }
+
+      allow read: if true;
+      allow create, update: if true;
+      allow delete: if false;
+    }
+
+    // Helper functions to create better rules
+
+    // Checks if the current user is signed in
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Checks if the current user has confirmed their email address
+    function emailVerified() {
+      return request.auth.token.email_verified;
+    }
+
+    // Checks if the user document exists
+    function userExists() {
+      return exists(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    // [READ] Data that exists on the Firestore document
+    function existingData() {
+      return resource.data;
+    }
+    // [WRITE] Data that is sent to a Firestore document
+    function incomingData() {
+      return request.resource.data;
+    }
+
+    // Does the logged-in user match the requested userId
+    function isUser(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // Fetch a user from Firestore
+    function getUserData() {
+      return get(/databases/$(database)/documents/accounts/$(request.auth.uid)).data
+    }
+
+    // Fetch a user-specific field from Firestore
+    function userEmail(userId) {
+      return get(/databases/$(database)/documents/users/$(userId)).data.email;
+    }
+  }
+}
